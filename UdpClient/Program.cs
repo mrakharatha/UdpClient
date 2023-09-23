@@ -21,10 +21,10 @@ namespace UdpClient
                 while (true)
                 {
                     // دریافت داده از کلاینت
-                    byte[] data = udpServer.Receive(ref clientEndPoint);
-                    string receivedMessage = Encoding.UTF8.GetString(data);
+                    var data = udpServer.Receive(ref clientEndPoint);
+                    var receivedMessage = Encoding.UTF8.GetString(data);
 
-                    Console.WriteLine($"پیام دریافتی: {receivedMessage}");
+                    Console.WriteLine($"Received Message : {receivedMessage}");
                 }
             }
             catch (Exception ex)
